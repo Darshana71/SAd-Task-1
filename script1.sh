@@ -1,13 +1,24 @@
-#script2
+#script1
 
 #!/bin/bash
 
-chown -R ChiefCommander /home
+for USER in "ChiefCommander" "ArmyGeneral" "NavyMarshal" "AirForceChief"; do
+useradd -m $USER
+passwd $USER
+done
 
 for((i=1;i<51;i++)); do
 
-chown -R ArmyGeneral /home/Army$i
-chown -R NavyMarshal /home/Navy$i
-chown -R AirForceChief /home/AirForce$i
+useradd -m Army$i
+echo "Enter password for Army$i"
+passwd Army$i
+
+useradd -m Navy$i
+echo "Enter password for Navy$i"
+passwd Navy$i
+
+useradd -m AirForce$i
+echo "Enter password for AirForce$i"
+passwd AirForce$i
 
 done
