@@ -21,4 +21,3 @@ useradd -m AirForce$i
 echo "Enter password for AirForce$i"
 passwd AirForce$i
 
-done
