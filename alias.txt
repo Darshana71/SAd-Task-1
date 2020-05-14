@@ -1,0 +1,16 @@
+
+alias userGenerate='chmod +x script1.sh;./script1.sh'
+alias permit='chmod +x script2.sh;./script2.sh'
+alias autoSchedule='chmod +x script3.sh;./script3.sh'
+alias attendance='chmod +x script4.sh;./script4.sh'
+alias record='chmod +x script5.sh;./script5.sh'
+alias finalattendance='chmod +x script6.sh;./script6.sh'
+
+crontab -e
+00 00 * * * autoSchedule
+
+crontab -e
+06 00 * * * attendance
+
+crontab -e
+06 00 * * * finalattendance
