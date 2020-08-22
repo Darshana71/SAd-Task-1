@@ -3,22 +3,19 @@
 #!/bin/bash
 
 for USER in "ChiefCommander" "ArmyGeneral" "NavyMarshal" "AirForceChief"; do
-useradd -m $USER
-passwd $USER
+sudo useradd -m $USER
+echo "$USER:$USER" | sudo chpasswd
 done
 
 for((i=1;i<51;i++)); do
 
 useradd -m Army$i
-echo "Enter password for Army$i"
-passwd Army$i
+echo "$Army$i:$Army$i" | sudo chpasswd
 
 useradd -m Navy$i
-echo "Enter password for Navy$i"
-passwd Navy$i
+echo "$Navy$i:$Navy$i" | sudo chpasswd
 
 useradd -m AirForce$i
-echo "Enter password for AirForce$i"
-passwd AirForce$i
+echo "$AirForce$i:$AirForce$i" | sudo chpasswd
 
 done
